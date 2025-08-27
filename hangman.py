@@ -1,74 +1,16 @@
 import random
-stages = [r'''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', r'''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', r'''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
-word_list = [
-    "aardvark", "baboon", "camel",
-    "python", "java", "keyboard", "monitor", "pencil",
-    "guitar", "violin", "puzzle", "mystery", "rocket",
-    "castle", "pirate", "treasure", "island", "jungle",
-    "pyramid", "bridge", "planet", "galaxy", "universe",
-    "school", "teacher", "library", "garden", "circus"
-]
+
+from hangman_words import word_list
+from hangman_art import stages, logo
 
 
 # TODO-1: - Create a variable called 'lives' to keep track of the number of lives left.
 #  Set 'lives' to equal 6.
 
 lives = 6
+
+print(logo)
+
 chosen_word = random.choice(word_list)
 print(chosen_word)
 
@@ -76,7 +18,7 @@ placeholder = ""
 word_length = len(chosen_word)
 for position in range(word_length):
     placeholder += "_"
-print(placeholder)
+print("Word to guess: " + placeholder)
 
 game_over = False
 correct_letters = []
