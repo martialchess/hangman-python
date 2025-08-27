@@ -24,7 +24,12 @@ game_over = False
 correct_letters = []
 
 while not game_over:
+
+    print(f"****************************{lives}/6 LIVES LEFT****************************")
     guess = input("Guess a letter: ").lower()
+
+    if guess in correct_letters:
+        print(f"You've already guessed {guess}")
 
     display = ""
 
@@ -37,7 +42,7 @@ while not game_over:
         else:
             display += "_"
 
-    print(display)
+    print("Word to guess: " + display)
 
     # TODO-2: - If guess is not a letter in the chosen_word, Then reduce 'lives' by 1.
     #  If lives goes down to 0 then the game should stop and it should print "You lose."
