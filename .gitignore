@@ -1,0 +1,15 @@
+# .gitignore suggested content
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+.venv/
+venv/
+.idea/
+.vscode/
+*.sqlite3
+*.db
+.DS_Store
+.env
